@@ -8,9 +8,448 @@
   font-family: 'Poppins', sans-serif;
 }
 
-::root {
-  --orange: #FF5E00;
-  --light-gray: #ECF2FD;
-  --dark-blue: #2E3271;
-  --dark-gray: #7C8DB5;
+:root {
+  --orange: #ff5e00;
+  --light-gray: #ecf2fd;
+  --dark-blue: #2e3271;
+  --dark-gray: #7c8db5;
+}
+
+body {
+  background-color: var(--light-gray);
+}
+
+.image-section {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  position: relative;
+}
+/* ======= start of forms ========= */
+
+.form-section {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.form-section section {
+  width: 100%;
+  position: relative;
+}
+.form-section form > * {
+  width: 100%;
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.form-section .buttons {
+  margin-bottom: 2.5rem;
+}
+
+.form-section .buttons button {
+  border: none;
+  background: transparent;
+  margin: 0 0.5rem 0;
+  font-weight: 600;
+  position: relative;
+}
+
+.form-section .buttons .active::after {
+  content: '';
+  position: absolute;
+  background-color: var(--orange);
+  width: 2rem;
+
+  top: 1.3rem;
+  bottom: -7px;
+  left: 8px;
+  border-radius: 10px;
+}
+
+.form-section form {
+  margin-bottom: 1.5rem;
+}
+
+.form-section .message {
+  display: none;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  padding: 1rem;
+  color: #8c1a21;
+  background-color: rgba(230, 212, 171, 0.4);
+  box-shadow: 0px 2px 2px rgba(49, 48, 48, 0.221);
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  position: absolute;
+  top: 0px;
+  transform: translateY(-120%);
+  /* left: 37px; */
+  width: 100%;
+}
+
+.form-section .pop-in {
+  animation: popIn 1s forwards;
+}
+
+.form-section .pop-out {
+  animation: popOut 1s forwards;
+}
+
+@keyframes popIn {
+  0% {
+    left: -400px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes popOut {
+  0% {
+    left: 20px;
+  }
+
+  100% {
+    left: -400px;
+  }
+}
+
+.form-section .message span {
+  cursor: pointer;
+}
+
+.form-section form input,
+.form-section form button {
+  margin-bottom: 0.8rem;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px rgba(49, 48, 48, 0.221);
+}
+
+.form-section form input:focus {
+  outline: none;
+}
+
+.form-section form .empty {
+  outline: solid 2px var(--orange);
+}
+
+.form-section form p {
+  text-align: right;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+.form-section form button {
+  border: none;
+  background-color: var(--orange);
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+/* ======= end of forms ========= */
+
+/* ======= start of social media ========= */
+
+.social-media div {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.social-media div:nth-child(1) div {
+  width: 20%;
+  height: 3px;
+}
+
+.social-media div:nth-child(1) .left {
+  background: linear-gradient(to right, transparent, var(--orange));
+}
+
+.social-media div:nth-child(1) .right {
+  background: linear-gradient(to left, transparent, var(--orange));
+}
+
+.social-media div:nth-child(1) p {
+  width: 30%;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.social-media div:nth-child(2) div {
+  background-color: white;
+  padding: 0.6rem;
+  margin: 0 1rem;
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.social-media div:nth-child(2) div img {
+  width: 100%;
+  height: 100%;
+}
+
+.sign-up {
+  display: none;
+}
+
+/* ======= end of social media ========= */
+/* ======== Media queries ========== */
+
+@media (min-width: 600px) and (max-width: 991.98px) {
+  html {
+    font-size: 18px;
+  }
+
+  .form-section {
+    padding: 4rem 6rem;
+  }
+  .form-section section {
+    position: static;
+  }
+
+  .form-section .buttons button {
+    font-size: 0.8rem;
+  }
+
+  .form-section form input::placeholder {
+    font-size: 1rem;
+  }
+  .form-section .message {
+    width: 35%;
+    top: 10px;
+    padding: 0.8rem 1rem;
+    transform: translateY(0);
+  }
+  .form-section .pop-in {
+    animation: popIn 1s forwards;
+  }
+
+  .form-section .pop-out {
+    animation: popOut 1s forwards;
+  }
+
+  @keyframes popIn {
+    0% {
+      left: -400px;
+    }
+
+    100% {
+      left: 20px;
+    }
+  }
+
+  @keyframes popOut {
+    0% {
+      left: 20px;
+    }
+
+    100% {
+      left: -400px;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1399.98px) {
+  main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .form-section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 7rem;
+  }
+  .form-section section {
+    position: static;
+  }
+  .form-section .buttons button {
+    font-size: 0.8rem;
+  }
+
+  .form-section form input::placeholder {
+    font-size: 1rem;
+  }
+  .image-section {
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-radius: 40px 0 0 40px;
+    box-shadow: 0px 2px 30px rgba(49, 48, 48, 0.221);
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    animation: slide 2s forwards;
+  }
+  .image-section img {
+    width: 100%;
+    animation: slideImg 4s forwards;
+  }
+  .form-section .message {
+    width: 50%;
+    top: 10px;
+    transform: translateY(0);
+  }
+  .form-section .pop-in {
+    animation: popIn 1s forwards;
+  }
+
+  .form-section .pop-out {
+    animation: popOut 1s forwards;
+  }
+
+  @keyframes popIn {
+    0% {
+      left: -500px;
+    }
+
+    100% {
+      left: 20px;
+    }
+  }
+  @keyframes popOut {
+    0% {
+      left: 20px;
+    }
+
+    100% {
+      left: -500px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+  main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  .form-section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 10rem;
+  }
+
+  .form-section section {
+    position: static;
+  }
+
+  .form-section .buttons button {
+    font-size: 0.8rem;
+  }
+
+  .form-section form input::placeholder {
+    font-size: 0.8rem;
+  }
+  .image-section {
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    border-radius: 40px 0 0 40px;
+    box-shadow: 0px 2px 30px rgba(49, 48, 48, 0.221);
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    animation: slide 2s forwards;
+  }
+  .image-section img {
+    width: 100%;
+    animation: slideImg 4s forwards;
+  }
+  .form-section .message {
+    width: 50%;
+    top: 10px;
+    transform: translateY(0);
+  }
+
+  .form-section .pop-in {
+    animation: popIn 1s forwards;
+  }
+
+  .form-section .pop-out {
+    animation: popOut 1s forwards;
+  }
+
+  @keyframes popIn {
+    0% {
+      left: -600px;
+    }
+
+    100% {
+      left: 20px;
+    }
+  }
+
+  @keyframes popOut {
+    0% {
+      left: 20px;
+    }
+
+    100% {
+      left: -600px;
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes slideImg {
+  0% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
