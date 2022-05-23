@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/signin-up.css">
-  <title>Signin / Signup</title>
-</head>
-<body>
-  <script src="../javascript/signin-up.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/signin-up.css" />
+    <title>Signin / Signup</title>
+  </head>
+  <body>
+    <main>
+      <section class="form-section">
+        <section>
+          <div class="message">
+            <p>Incorrect E-mail or password</p>
+            <span>&#10006;</span>
+          </div>
+          <h2>Welcome Back</h2>
+          <div class="buttons">
+            <button class="in-btn active">Sign in</button>
+            <button class="up-btn">Sign up</button>
+          </div>
+          <form class="sign-in" name="sign-in">
+            <input type="email" placeholder="E-mail" />
+            <input type="password" placeholder="Password" />
+            <p>Forgot password?</p>
+            <button class="signin-btn">Sign In</button>
+          </form>
+          <form class="sign-up">
+            <input type="text" placeholder="First name" />
+            <input type="text" placeholder="Last name" />
+            <input type="email" placeholder="E-mail" />
+            <input type="password" placeholder="Password" />
+            <button class="signup-btn">Sign up</button>
+          </form>
+
+          <div class="social-media">
+            <div>
+              <div class="left"></div>
+              <p>Or sign in with</p>
+              <div class="right"></div>
+            </div>
+
+            <div>
+              <div>
+                <img src="../imgs/icons/Google logo.svg" alt="google" />
+              </div>
+              <div><img src="../imgs/icons/Facbook.svg" alt="google" /></div>
+              <div><img src="../imgs/icons/Apple.svg" alt="google" /></div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section class="image-section">
+        <img src="../imgs/landing-page.svg" alt="" />
+      </section>
+    </main>
+    <script src="../javascript/signin-up.js"></script>
+  </body>
 </html>
